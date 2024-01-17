@@ -1,0 +1,10 @@
+{% if request.user.is_authenticated %}
+<strong>{{ request.user|capfirst }}</strong>
+<a href="{% url 'logout' %}">(Logout)</a>
+<br>
+<!-- Total registered users: {{ objects.user.count }} -->
+{% else %}
+<a href="{% url 'register' %}">Register</a>
+<a href="{% url 'login' %}">Login</a>
+{% endif %}
+<h1>Home</h1>
